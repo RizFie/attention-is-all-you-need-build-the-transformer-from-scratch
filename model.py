@@ -24,6 +24,23 @@ def build_token_to_id_vocab(sentences, specials=('<pad>', '<bos>', '<eos>', '<un
                 count += 1
     return token_to_id
 
+    """
+    ------- OPTIMIZED VERSION -------
+    def build_token_to_id_vocab(sentences, specials=('<pad>', '<bos>', '<eos>', '<unk>')):
+    # 1. Dictionary comprehension with enumerate handles the specials instantly
+    token_to_id = {special: i for i, special in enumerate(specials)}
+    
+    # 2. Iterate through sentences and words
+    for sentence in sentences:
+        for word in sentence.split():
+            if word not in token_to_id:
+                # The next ID is always exactly the current size of the dictionary
+                token_to_id[word] = len(token_to_id)
+                
+    return token_to_id
+    ---------------------------------
+    """
+
 # Step 2 - build_id_to_token_vocab (not yet solved)
 # TODO: implement
 
