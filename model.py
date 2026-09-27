@@ -11,7 +11,6 @@ def build_token_to_id_vocab(sentences, specials=('<pad>', '<bos>', '<eos>', '<un
     # TODO: build a token-to-id dict with specials first, then corpus tokens in first-seen order.
     token_to_id = {}
     count = 0
-    exist = {}
     for special in specials:
         token_to_id[special] = count
         count += 1
