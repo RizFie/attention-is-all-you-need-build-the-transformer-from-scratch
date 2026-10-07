@@ -58,8 +58,14 @@ def encode_sentence_to_ids(sentence, token_to_id, unk_token='<unk>'):
         sentence_to_ids.append(word_id)
     return sentence_to_ids
 
-# Step 4 - decode_ids_to_tokens (not yet solved)
-# TODO: implement
+# Step 4 - decode_ids_to_tokens
+def decode_ids_to_tokens(ids, id_to_token):
+    # TODO: map each id in ids to its token string via id_to_token and return the list
+    result = []
+    for each_id in ids:
+        value = id_to_token[each_id]
+        result.append(value)
+    return result
 
 # Step 5 - pad_id_sequence (not yet solved)
 # TODO: implement
@@ -248,6 +254,9 @@ def encode_sentence_to_ids(sentence, token_to_id, unk_token='<unk>'):
 # TODO: implement
 
 # Step 67 - apply_adam_bias_correction (not yet solved)
+# TODO: implement
+
+# Step 68 - compute_adam_parameter_update (not yet solved)
 # TODO: implement
 
 # Step 69 - apply_adam_step_to_all_parameters (not yet solved)
