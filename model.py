@@ -146,8 +146,14 @@ def build_sinusoidal_positional_encoding(max_len, d_model):
     cos_fill = fill_odd_indices_with_cos(sin_fill, position_cols, div_terms)
     return cos_fill
 
-# Step 13 - add_positional_encoding_to_embeddings (not yet solved)
-# TODO: implement
+# Step 13 - add_positional_encoding_to_embeddings
+import torch
+
+def add_positional_encoding_to_embeddings(embedded_batch, positional_encoding):
+    # TODO: add the first L rows of positional_encoding to embedded_batch and return the sum.
+    L = embedded_batch.shape[1] # (B, L, d_model)
+    pe = positional_encoding[:L] # Only the first L rows
+    return embedded_batch + pe
 
 # Step 14 - build_padding_mask (not yet solved)
 # TODO: implement
